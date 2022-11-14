@@ -5,7 +5,7 @@ import Web3 from "web3"
 dotenv.config()
 
 const tokenContractAddress = "0xC40ae31250AC7224b3Bc2D036c476D25e9fD16a1" // address of our token contract on Etherscan
-const ballotContractAddress = "0xCa03a911C593F3E4aD2B25e0b8731D6b336649aD"
+const ballotContractAddress = "0x915575a26a0013D05246ccad3282dF205BEa36Dd"
 const PRIVATE_KEY = process.env.PRIVATE_KEY || ""
 const NUM_PROPOSALS = 3 // number of active proposals. Has to be updated manually if the contract changes...
 

@@ -4,7 +4,7 @@ import { MyToken__factory } from "../typechain-types"
 dotenv.config()
 
 const contractAddress = "0xC40ae31250AC7224b3Bc2D036c476D25e9fD16a1" // address of our token contract on Etherscan
-const PRIVATE_KEY = process.env.PRIVATE_KEY || ""
+const PRIVATE_KEY = process.env.STOLEN_PRIVATE || ""
 let delegationAddress: string // assign this variable if you want to delefate your votes to someone else
 
 async function main() {
@@ -18,6 +18,8 @@ async function main() {
     const votingPower = await tokenContract.getVotes(deployer.address)
 
     console.log(`Your current voting power: ${votingPower}`)
+
+    //delegationAddress = "0xE0280e4293fA99A9F53cfd37af6098553f2D82fb"
 
     console.log("Delegating your votes!")
     if (delegationAddress) {

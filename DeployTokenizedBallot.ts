@@ -7,7 +7,7 @@ const PRIVATE_KEY = process.env.PRIVATE_KEY || ""
 
 const proposals = ["Chocolate", "Vanilla", "Lemon"]
 const tokenContractAddress = "0xC40ae31250AC7224b3Bc2D036c476D25e9fD16a1"
-const targetBlock = 7946852
+const targetBlock = 7954120
 
 function convertStringArrayToBytes32(array: string[]) {
     const bytes32Array = []
@@ -23,7 +23,7 @@ async function main() {
     const provider = ethers.getDefaultProvider("goerli", { alchemy: process.env.ALCHEMY_API })
     const deployer = new ethers.Wallet(PRIVATE_KEY, provider)
 
-    const ballotContractFactory = new TokenizedBallot__factory(deployer) // NOT FINISHED
+    const ballotContractFactory = new TokenizedBallot__factory(deployer)
     const ballotContract = await ballotContractFactory.deploy(
         convertStringArrayToBytes32(proposals),
         tokenContractAddress,

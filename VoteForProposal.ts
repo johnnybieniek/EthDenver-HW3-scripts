@@ -3,11 +3,11 @@ import * as dotenv from "dotenv"
 import { TokenizedBallot__factory } from "../typechain-types"
 dotenv.config()
 
-const PRIVATE_KEY = process.env.PRIVATE_KEY || ""
+const PRIVATE_KEY = process.env.STOLEN_PRIVATE || ""
 
-const ballotAddress = "0xCa03a911C593F3E4aD2B25e0b8731D6b336649aD" // add the address of our TokenizedBallot from etherscan
+const ballotAddress = "0x915575a26a0013D05246ccad3282dF205BEa36Dd" // add the address of our TokenizedBallot from etherscan
 const proposalToVoteFor = 0 // index of the proposal to vote for
-const votesToUse = 100 // amount of voting power to spend
+const votesToUse = 1 // amount of voting power to spend
 
 async function main() {
     const provider = ethers.getDefaultProvider("goerli", { alchemy: process.env.ALCHEMY_API })
